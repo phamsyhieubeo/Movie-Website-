@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Watching: {{ episode }}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #ff5733;
+        }
+        video {
+            width: 90%;
+            max-width: 720px;
+            margin: 20px auto;
+            display: block;
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+        }
+        footer {
+            margin-top: 30px;
+            font-size: 1rem;
+            color: #aaa;
+        }
+    </style>
+</head>
+<body>
+    <h1>Now Watching: {{ episode }}</h1>
+
+    <video controls autoplay>
+        <source src="/video/Series/{{ folder }}/{{ sub_folder }}/{{ episode }}" type="video/mp4">
+
+        <track 
+            src="/subtitle/Series/{{ folder }}/{{ sub_folder }}/{{ episode.rsplit('.', 1)[0] }}.vtt" 
+            kind="subtitles" 
+            srclang="en" 
+            label="English" 
+            default>
+
+        Your browser does not support the video tag.
+    </video>
+
+    <footer>
+        <p>Enjoy your watch from Series: {{ folder }}</p>
+    </footer>
+
+    <script>
+        console.log("Video source: /video/Series/{{ folder }}/{{ sub_folder }}/{{ episode }}");
+    </script>
+</body>
+</html>

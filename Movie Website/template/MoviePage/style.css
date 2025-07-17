@@ -1,0 +1,18 @@
+html{
+    background-size: cover;
+    max-width: 1000px;
+    width: 90%;
+}
+
+#title {
+    font-family: monospace;
+    font-size: 4rem;
+    text-align: center;
+}
+
+#Movie{
+    padding: 2rem 2rem;
+    width: 20%;
+    border-radius: 10px;
+    border: black 2px solid;
+}

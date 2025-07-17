@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Series</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f4f4f4;
+                text-align: center;
+                margin: 0;
+                padding: 30px;
+            }
+
+            #title {
+                font-size: 3rem;
+                font-weight: bold;
+                color: #333;
+                margin-bottom: 20px;
+            }
+
+            #Series ul {
+                list-style: none;
+                padding: 0;
+                text-align: center;
+            }
+
+            #Series li {
+                margin: 10px 0;
+                padding: 10px;
+                background-color: white;
+                border-radius: 8px;
+                border: black 1px solid;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                display: inline-block;
+                padding: 10px;
+            }
+
+            #Series a {
+                text-decoration: none;
+                color: #007bff;
+                font-weight: bold;
+                font-size: 1.2rem;
+            }
+
+            #Series a:hover {
+                color: #ff5733;
+            }
+
+            #Series a img{
+                width: 200px;
+                height: 300px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 id="title">Series</h1>
+        <div id="Series">
+            <ul>
+            {% for folder in folders %}
+                <li>
+                    <a href="/Series/{{ folder }}">
+                        {% if covers[loop.index0] %}
+                            <img src="{{ covers[loop.index0] }}" alt = "Cover">
+                        {% else %}
+                            <p>{{ folder }}</p>
+                        {% endif %}
+                    </a><br>
+                </li>
+            {% endfor %}
+            </ul>
+        </div>
+    </body>
+</html>

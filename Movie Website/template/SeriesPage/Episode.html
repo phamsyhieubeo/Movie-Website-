@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{ sub_folder }}</title>
+        <style>
+
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f4f4f4;
+                text-align: center;
+                margin: 0;
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+                font-weight: bold;
+                color: #333;
+                margin-bottom: 20px;
+            }
+
+            ul {
+                list-style: none;
+                padding: 0;
+            }
+
+            li {
+                padding: 10px;
+                margin: 10px 0;
+                background-color: #fff;
+                border-radius: 8px;
+                box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+                display: inline-block;
+                width: 80%;
+            }
+
+            a {
+                text-decoration: none;
+                font-size: 1.2rem;
+                color: #007bff;
+                font-weight: bold;
+            }
+
+            a:hover {
+                color: #ff5733;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1>{{ sub_folder }}</h1>
+        <ul>
+            {% for ep in episodes %}
+                <li>
+                    <a href="{{ sub_folder }}/{{ ep }}">{{ ep }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </body>
+</html>
